@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #151515;
+  color: #4c8217;
+}
+
+.content {
+  width: 100%;
+  min-height: calc(100vh - 60px); // Вычитаем высоту навигации
+  padding: 0;
+  margin: 0;
+}

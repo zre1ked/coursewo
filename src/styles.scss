@@ -1,0 +1,139 @@
+/* Import fonts */
+@font-face {
+  font-family: "Heraclito";
+  src: url("/assets/fonts/Heraclito.woff2") format("woff2"),
+    url("/assets/fonts/Heraclito.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Asimov";
+  src: url("/assets/fonts/Asimov.woff2") format("woff2"),
+    url("/assets/fonts/Asimov.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global variables */
+:root {
+  --color-heading: #fbfbfb;
+  --color-text: #4c8217;
+  --color-background: #151515;
+  --color-card: #303030;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #151515;
+  color: #4c8217;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #4c8217;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+}
+p {
+  font-size: 16px;
+}
+
+/* Form elements */
+input {
+  font-family: inherit;
+  outline: none;
+  background-color: rgba(26, 26, 26, 0.8);
+  border: 1px solid #4c8217;
+  color: #4c8217;
+  padding: 0.5rem;
+}
+
+input::placeholder {
+  color: rgba(76, 130, 23, 0.5);
+}
+
+input[type="checkbox"] {
+  accent-color: #4c8217;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4c8217;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6ab71f;
+}
+
+/* Utility classes */
+.text-accent {
+  color: #4c8217;
+}
+
+.bg-dark {
+  background-color: rgba(26, 26, 26, 0.95);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Cards */
+.card {
+  background-color: #303030;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Utility classes */
+.text-light {
+  color: #fbfbfb;
+}
+
+.bg-card {
+  background-color: #303030;
+}
