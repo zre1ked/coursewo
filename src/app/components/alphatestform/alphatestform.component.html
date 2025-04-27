@@ -1,0 +1,57 @@
+<section class="content-section alpha-test">
+  <div class="alpha-test-content">
+    <div class="form-section">
+      <h3>Оставьте заявку на альфа тест</h3>
+
+      @if (alphaTestService.isSubmitted$ | async) {
+      <div class="success-message">✔️ Заявка успешно отправлена</div>
+      } @else {
+      <div class="form-group">
+        <label>Почта (email)</label>
+        <input
+          type="email"
+          placeholder="Введите ваш email"
+          class="email-input"
+          [(ngModel)]="email"
+          [disabled]="isLoading"
+        />
+      </div>
+
+      <div class="form-group checkbox">
+        <input
+          type="checkbox"
+          id="consent"
+          [(ngModel)]="consent"
+          [disabled]="isLoading"
+        />
+        <label for="consent">
+          Я согласен с обработкой персональных данных
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button
+          class="submit-button"
+          (click)="submitForm()"
+          [disabled]="isLoading"
+        >
+          @if (isLoading) {
+          <span>Отправка...</span>
+          } @else {
+          <span>Отправить заявку</span>
+          }
+        </button>
+      </div>
+      }
+    </div>
+
+    <div class="images-section">
+      <div class="image-placeholder">
+        <span>Тут будет фотография</span>
+      </div>
+      <div class="image-placeholder">
+        <span>Тут будет фотография</span>
+      </div>
+    </div>
+  </div>
+</section>
