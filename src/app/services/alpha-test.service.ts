@@ -16,9 +16,9 @@ export class AlphaTestService {
       ...data,
       createdAt: new Date().toISOString(),
     };
-    return of({ success: true }).pipe(
-      delay(1000),
-      tap(() => this.markAsSubmitted())
+    return this.http.post(this.apiUrl, requestData).pipe(
+      tap(() => this.markAsSubmitted()),
+      delay(1000)
     );
   }
 

@@ -15,7 +15,6 @@ export class AlphatestformComponent {
   @Input() isSubmitted = false;
   email = '';
   consent = false;
-
   isLoading = false;
 
   constructor(public alphaTestService: AlphaTestService) {}
@@ -26,11 +25,19 @@ export class AlphatestformComponent {
       return;
     }
 
-    this.alphaTestService
-      .submitRequest({ email: this.email, consent: this.consent })
-      .subscribe({
-        next: () => alert('Заявка отправлена успешно!'),
-        error: () => alert('Ошибка при отправке заявки.'),
-      });
+    this.isLoading = true;
+
+    this.alphaTestService.submitRequest(this.email).subscribe({
+      next: () => {
+        alert('Заявка отправлена успешно!');
+        this.isLoading = false;
+        this.email = ''; // Очистить поле после отправки
+        this.consent = false; // Сбросить согласие
+      },
+      error: () => {
+        alert('Ошибка при отправке заявки.');
+        this.isLoading = false;
+      },
+    });
   }
 }
