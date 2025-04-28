@@ -11,11 +11,13 @@ export class AlphaTestService {
 
   constructor(private http: HttpClient) {}
 
-  submitRequest(data: any): Observable<any> {
+  submitRequest(data: { email: string; consent: boolean }): Observable<any> {
     const requestData = {
-      ...data,
+      email: data.email,
+      consent: data.consent,
       createdAt: new Date().toISOString(),
     };
+
     return this.http.post(this.apiUrl, requestData).pipe(
       tap(() => this.markAsSubmitted()),
       delay(1000)

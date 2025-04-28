@@ -27,12 +27,17 @@ export class AlphatestformComponent {
 
     this.isLoading = true;
 
-    this.alphaTestService.submitRequest(this.email).subscribe({
+    const requestData = {
+      email: this.email,
+      consent: this.consent,
+    };
+
+    this.alphaTestService.submitRequest(requestData).subscribe({
       next: () => {
         alert('Заявка отправлена успешно!');
         this.isLoading = false;
-        this.email = ''; // Очистить поле после отправки
-        this.consent = false; // Сбросить согласие
+        this.email = '';
+        this.consent = false;
       },
       error: () => {
         alert('Ошибка при отправке заявки.');
